@@ -1,5 +1,13 @@
 ## Unreleased
 
+## [0.2.0](https://github.com/microsoft/kiota-dart/compare/microsoft_kiota_abstractions-v0.1.0...microsoft_kiota_abstractions-v0.2.0) (2026-08-27)
+
+
+### Features
+
+* adds support for wildcard host validation ([#143](https://github.com/microsoft/kiota-dart/issues/143)) ([82d4953](https://github.com/microsoft/kiota-dart/commit/82d4953bae26d8871b5fea55cc6aec0d075c9349))
+* Sanitize null values from map query parameters before URI expansion ([#139](https://github.com/microsoft/kiota-dart/issues/139)) ([80f7921](https://github.com/microsoft/kiota-dart/commit/80f7921e61dfeb7aadad86ce9d7528d0319b695f))
+
 ## [0.1.0](https://github.com/microsoft/kiota-dart/compare/microsoft_kiota_abstractions-v0.0.3...microsoft_kiota_abstractions-v0.1.0) (2025-10-02)
 
 
