@@ -16,7 +16,7 @@ class AllowedHostsValidator {
     _allowedHosts = _createCaseInsensitiveHashSet()..addAll(validHosts);
   }
 
-  late Set<String> _allowedHosts;
+  Set<String> _allowedHosts = {};
 
   /// Gets the allowed hosts.
   Iterable<String> get allowedHosts => _allowedHosts;
