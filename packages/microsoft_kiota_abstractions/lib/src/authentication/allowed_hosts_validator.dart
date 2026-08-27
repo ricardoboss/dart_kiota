@@ -16,7 +16,7 @@ class AllowedHostsValidator {
     _allowedHosts = _createCaseInsensitiveHashSet()..addAll(validHosts);
   }
 
-  late final Set<String> _allowedHosts;
+  Set<String> _allowedHosts = {};
 
   /// Gets the allowed hosts.
   Iterable<String> get allowedHosts => _allowedHosts;
@@ -29,7 +29,15 @@ class AllowedHostsValidator {
 
   /// Validates that the given [uri] is valid.
   bool isUrlHostValid(Uri uri) {
-    return _allowedHosts.isEmpty || _allowedHosts.contains(uri.host);
+    if (_allowedHosts.isEmpty || _allowedHosts.contains(uri.host)) {
+      return true;
+    }
+    final host = uri.host.toLowerCase();
+    return _allowedHosts.any(
+      (allowedHost) =>
+          allowedHost.startsWith('.') &&
+          host.endsWith(allowedHost.toLowerCase()),
+    );
   }
 
   static void _validateHosts(Iterable<String> hostsToValidate) {
